@@ -1,6 +1,7 @@
 name: Deploy testing
 on:
-  workflow_call:
+  repository_dispatch:
+    types: [ my_event ]
 
 env:
  ASPNETCORE_ENVIRONMENT: Production
