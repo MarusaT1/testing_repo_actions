@@ -1,6 +1,6 @@
 name: Deploy testing
 on:
-  workflow_call:
+  workflow_dispatch:
 
 env:
  ASPNETCORE_ENVIRONMENT: Production
@@ -16,7 +16,7 @@ jobs:
         echo "SENDER EMAIL: ${{ secrets.SENDER_EMAIL }}"
         echo "MAIL PASSWORD: ${{ secrets.MAIL_PASSWORD }}"
         echo "FEEDBACK MAIL: ${{ secrets.FEEDBACK_MAIL }}"
-        echo "Reused"
+  needs: action_build
 #   - name: Replace frontend recaptcha key
 #     uses: jacobtomlinson/gha-find-replace@v2
 #     with:
